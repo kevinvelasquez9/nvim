@@ -19,6 +19,7 @@ o.smartcase = true
 
 -- cursor line
 o.cursorline = true
+o.colorcolumn = "80"
 
 -- appearance
 o.termguicolors = true
