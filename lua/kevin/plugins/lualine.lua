@@ -14,7 +14,7 @@ end
 
 lualine.setup({
 	options = {
-		theme = "tokyonight",
+		theme = "gruvbox",
 	},
 	sections = {
 		lualine_x = { "filetype", lsp_name },

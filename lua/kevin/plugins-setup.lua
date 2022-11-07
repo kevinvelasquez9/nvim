@@ -30,6 +30,7 @@ return packer.startup(function(use)
 	-- colorscheme
 	use("Mofiqul/dracula.nvim")
 	use("folke/tokyonight.nvim")
+	use("ellisonleao/gruvbox.nvim")
 
 	-- window managers
 	use("christoomey/vim-tmux-navigator")
