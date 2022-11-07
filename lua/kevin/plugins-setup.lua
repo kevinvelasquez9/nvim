@@ -96,6 +96,7 @@ return packer.startup(function(use)
 
 	-- smooth scroll
 	use("karb94/neoscroll.nvim")
+	use("arnamak/stay-centered.nvim")
 
 	-- indentation guides
 	use("lukas-reineke/indent-blankline.nvim")
