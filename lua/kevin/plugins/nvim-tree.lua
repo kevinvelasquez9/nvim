@@ -23,4 +23,8 @@ nvimtree.setup({
 			},
 		},
 	},
+	-- hide .git folder
+	filters = {
+		custom = { "^.git$" },
+	},
 })
