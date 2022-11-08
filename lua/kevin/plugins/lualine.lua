@@ -9,7 +9,7 @@ local function lsp_name()
 			return client.name
 		end
 	end
-	return ""
+	return "no lsp"
 end
 
 lualine.setup({
