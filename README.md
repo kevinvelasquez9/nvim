@@ -1,5 +1,3 @@
-<img src="images/screenshot.png" />
-
 ## 🚩 Table of Contents
 
 - [Features](#-features)
