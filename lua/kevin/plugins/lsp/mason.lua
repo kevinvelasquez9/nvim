@@ -18,8 +18,9 @@ mason.setup()
 mason_lspconfig.setup({
 	ensure_installed = {
 		"cssls",
-		"html",
 		"gopls",
+		"html",
+		"jdtls",
 		"ocamllsp",
 		"pyright",
 		"sumneko_lua",
@@ -31,6 +32,7 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"black",
 		"gofumpt",
+		"google_java_format",
 		"ocamlformat",
 		"prettier",
 		"stylua",
