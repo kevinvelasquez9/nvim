@@ -20,6 +20,7 @@ mason_lspconfig.setup({
 		"cssls",
 		"html",
 		"gopls",
+		"ocamllsp",
 		"pyright",
 		"sumneko_lua",
 		"tsserver",
@@ -30,6 +31,7 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"black",
 		"gofumpt",
+		"ocamlformat",
 		"prettier",
 		"stylua",
 	},

@@ -62,6 +62,11 @@ lspconfig["gopls"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig["ocamllsp"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

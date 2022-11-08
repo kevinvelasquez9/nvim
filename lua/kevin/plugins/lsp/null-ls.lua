@@ -12,6 +12,9 @@ null_ls.setup({
 	sources = {
 		formatting.black,
 		formatting.gofumpt,
+		formatting.ocamlformat.with({
+			args = { "--enable-outside-detected-project", "--name", "$FILENAME", "-" },
+		}),
 		formatting.prettier,
 		formatting.stylua,
 	},
