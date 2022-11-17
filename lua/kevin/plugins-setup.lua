@@ -28,9 +28,8 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 
 	-- colorscheme
-	use("Mofiqul/dracula.nvim")
-	use("folke/tokyonight.nvim")
 	use("ellisonleao/gruvbox.nvim")
+	use("rose-pine/neovim")
 
 	-- window managers
 	use("christoomey/vim-tmux-navigator")
@@ -94,16 +93,6 @@ return packer.startup(function(use)
 
 	-- git signs
 	use("lewis6991/gitsigns.nvim")
-
-	-- smooth scroll
-	use("karb94/neoscroll.nvim")
-	use("arnamak/stay-centered.nvim")
-
-	-- indentation guides
-	use("lukas-reineke/indent-blankline.nvim")
-
-	-- which key
-	use("folke/which-key.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

@@ -38,4 +38,4 @@ o.splitbelow = true
 
 -- misc
 o.iskeyword:append("-")
-o.timeoutlen = 200
+o.timeoutlen = 400

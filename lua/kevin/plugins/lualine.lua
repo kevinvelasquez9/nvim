@@ -14,7 +14,10 @@ end
 
 lualine.setup({
 	options = {
-		theme = "gruvbox",
+		theme = "auto",
+		disabled_filetypes = { "packer", "NvimTree" },
+		section_separators = "",
+		component_separators = "",
 	},
 	sections = {
 		lualine_x = { "filetype", lsp_name },
