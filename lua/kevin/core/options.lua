@@ -37,5 +37,6 @@ o.splitright = true
 o.splitbelow = true
 
 -- misc
+o.showmode = false
 o.iskeyword:append("-")
 o.timeoutlen = 400

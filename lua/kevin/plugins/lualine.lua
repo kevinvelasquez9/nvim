@@ -20,8 +20,11 @@ lualine.setup({
 		component_separators = "",
 	},
 	sections = {
-		lualine_b = { "branch" },
-		lualine_x = { "filetype", lsp_name },
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "mode", "branch", "filename" },
+		lualine_x = { "filetype", lsp_name, "location" },
 		lualine_y = {},
+		lualine_z = {},
 	},
 })

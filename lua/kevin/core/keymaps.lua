@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 
 -- general
 
-map("i", "jk", "<Esc>") -- exit insert mode
+map("i", "jk", "<Esc>")
 
 map("n", "<Leader>q", "<Cmd>wq<CR>", { desc = "Save and quit" })
 map("n", "<Leader>w", "<Cmd>w<CR>", { desc = "Save" })

@@ -3,4 +3,15 @@ if not status then
 	return
 end
 
-bufferline.setup()
+bufferline.setup({
+	options = {
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = "File Explorer",
+				text_align = "center",
+				separator = true,
+			},
+		},
+	},
+})

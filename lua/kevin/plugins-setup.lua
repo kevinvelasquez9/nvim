@@ -31,7 +31,7 @@ return packer.startup(function(use)
 	use("ellisonleao/gruvbox.nvim")
 	use("rose-pine/neovim")
 
-	-- window managers
+	-- window manager
 	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer")
 
@@ -46,10 +46,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- bufferline & statusline
-	use({
-		"romgrk/barbar.nvim",
-		requires = { "kyazdani42/nvim-web-devicons" },
-	})
+	use("akinsho/bufferline.nvim")
 	use("nvim-lualine/lualine.nvim")
 
 	-- fuzzy find
