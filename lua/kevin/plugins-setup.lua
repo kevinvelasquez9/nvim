@@ -46,14 +46,14 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 
 	-- bufferline & statusline
-	use("akinsho/bufferline.nvim")
+	use("romgrk/barbar.nvim")
 	use("nvim-lualine/lualine.nvim")
 
-	-- fuzzy find
+	-- fuzzy finder
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
 
-	-- autocompletion
+	-- completion
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
