@@ -50,6 +50,7 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
+		["<C-Space>"] = cmp.mapping.confirm({ select = false }),
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },

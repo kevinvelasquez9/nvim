@@ -24,6 +24,7 @@ mason_lspconfig.setup({
 		"ocamllsp",
 		"pyright",
 		"sumneko_lua",
+		"tailwindcss",
 		"tsserver",
 	},
 })
