@@ -17,14 +17,12 @@
 
 | Name                                                                            | Description     |
 | ------------------------------------------------------------------------------- | --------------- |
-| <a href="https://github.com/Mofiqul/dracula.nvim">dracula.nvim</a>              | colorscheme     |
-| <a href="https://github.com/ellisonleao/gruvbox.nvim">gruvbox.nvim</a>          | colorscheme     |
-| <a href="https://github.com/folke/tokyonight.nvim">tokyonight.nvim</a>          | colorscheme     |
 | <a href="https://github.com/jose-elias-alvarez/null-ls.nvim">null-ls.nvim</a>   | formatting      |
 | <a href="https://github.com/jayp0521/mason-null-ls.nvim">mason-null-ls.nvim</a> | formatting      |
 | <a href="https://github.com/windwp/nvim-autopairs">nvim-autopairs</a>           | autopairs       |
 | <a href="https://github.com/windwp/nvim-ts-autotag">nvim-ts-autotag</a>         | autopairs       |
 | <a href="https://github.com/lewis6991/gitsigns.nvim">gitsigns.nvim</a>          | git decorations |
+| ...                                                                             | ...             |
 
 ## 🚀 Roadmap
 
