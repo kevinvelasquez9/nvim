@@ -16,6 +16,11 @@ map("n", "<Leader>sh", "<C-w>s", { desc = "Split horizontally" })
 map("n", "<Leader>se", "<C-w>=", { desc = "Split equally" })
 map("n", "<Leader>sx", "<Cmd>close<CR>", { desc = "Close window" })
 
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
 -- plugin keymaps
 
 -- bufferline
