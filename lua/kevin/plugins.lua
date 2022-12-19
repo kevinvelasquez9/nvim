@@ -37,6 +37,7 @@ require("packer").startup(function(use)
 		end,
 	})
 
+	-- lsp
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		requires = {
@@ -83,3 +84,49 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]])
+
+-- netrw
+vim.g.netrw_list_hide = "^./$,.git"
+vim.netrw_hide = 1
+vim.keymap.set("n", "<Leader>e", vim.cmd.Ex)
+
+-- colorscheme
+vim.cmd([[colorscheme ayu]])
+
+-- gitsigns
+require("gitsigns").setup()
+
+-- telescope
+require("telescope").setup({
+	defaults = {
+		mappings = {
+			i = {
+				["<C-k>"] = require("telescope.actions").move_selection_previous,
+				["<C-j>"] = require("telescope.actions").move_selection_next,
+			},
+		},
+	},
+})
+vim.keymap.set("n", "<Leader>f", "<Cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>F", "<Cmd>Telescope live_grep<CR>")
+
+-- undotree
+vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle)
+
+-- treesitter
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+		"css",
+		"html",
+		"python",
+		"javascript",
+		"lua",
+		"ocaml",
+		"tsx",
+		"typescript",
+	},
+	auto_install = true,
+	highlight = {
+		enable = true,
+	},
+})

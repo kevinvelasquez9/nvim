@@ -1,12 +1,5 @@
-local lsp_status, lsp = pcall(require, "lsp-zero")
-if not lsp_status then
-	return
-end
-
-local cmp_status, cmp = pcall(require, "cmp")
-if not cmp_status then
-	return
-end
+local lsp = require("lsp-zero")
+local cmp = require("cmp")
 
 lsp.preset("recommended")
 
@@ -22,7 +15,7 @@ lsp.ensure_installed({
 })
 
 local cmp_mappings = lsp.defaults.cmp_mappings({
-	["<C-Space>"] = cmp.mapping.confirm({ select = false }),
+	["<C-Space>"] = cmp.mapping.confirm({ select = true }),
 })
 cmp_mappings["<CR>"] = nil
 
@@ -48,11 +41,7 @@ lsp.configure("sumneko_lua", {
 
 lsp.setup()
 
-local null_ls_setup, null_ls = pcall(require, "null-ls")
-if not null_ls_setup then
-	return
-end
-
+local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
