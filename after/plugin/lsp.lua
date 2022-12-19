@@ -11,9 +11,13 @@ end
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+	"cssls",
+	"gopls",
+	"html",
 	"ocamllsp",
 	"pyright",
 	"sumneko_lua",
+	"tailwindcss",
 	"tsserver",
 })
 
