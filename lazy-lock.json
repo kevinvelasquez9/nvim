@@ -18,7 +18,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "eedb7b9c69b13afe86461b0742266bb62b811ece" },
   "packer.nvim": { "branch": "master", "commit": "dac4088c70f4337c6c40d1a2751266a324765797" },
   "plenary.nvim": { "branch": "master", "commit": "4b7e52044bbb84242158d977a50c4cbcd85070c7" },
-  "telescope.nvim": { "branch": "master", "commit": "cabf991b1d3996fa6f3232327fc649bbdf676496" },
+  "telescope.nvim": { "branch": "master", "commit": "b79cd6c88b3d96b0f49cb7d240807cd59b610cd8" },
   "tokyonight.nvim": { "branch": "main", "commit": "ce92e5b11028d2b16d9c7bd04a827b3388673c50" },
   "vim-tmux-navigator": { "branch": "master", "commit": "41ea9d23b814014c8d8daf8b44fa0cd827a0e5f4" },
   "vim-vinegar": { "branch": "master", "commit": "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }

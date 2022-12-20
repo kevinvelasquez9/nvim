@@ -18,7 +18,8 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim", -- git signs
 	"christoomey/vim-tmux-navigator", -- split manager
 	"tpope/vim-vinegar", -- netrw extension
-	{ "kylechui/nvim-surround", tag = "*" }, -- text manipulation
+	"kylechui/nvim-surround", -- surround text objects
+	"numToStr/Comment.nvim", -- "gc" to comment visual regions/lines
 
 	{
 		"nvim-telescope/telescope.nvim", -- fuzzy finder
@@ -56,20 +57,17 @@ require("lazy").setup({
 	},
 })
 
--- netrw
+-- configurations
+
 vim.g.netrw_banner = 1
 vim.keymap.set("n", "<Leader>e", vim.cmd.Ex)
 
--- colorscheme
 vim.cmd([[colorscheme tokyonight-night]])
 
--- gitsigns
 require("gitsigns").setup()
-
--- surround
 require("nvim-surround").setup()
+require("Comment").setup()
 
--- telescope
 require("telescope").setup({
 	defaults = {
 		mappings = {
@@ -80,10 +78,9 @@ require("telescope").setup({
 		},
 	},
 })
-vim.keymap.set("n", "<Leader>f", "<Cmd>Telescope find_files<CR>")
-vim.keymap.set("n", "<Leader>F", "<Cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>")
 
--- treesitter
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"css",
