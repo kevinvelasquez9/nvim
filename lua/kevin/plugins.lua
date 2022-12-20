@@ -8,6 +8,7 @@ end
 
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
+	use("dstein64/vim-startuptime") -- use :StartupTime (160 ms)
 
 	use("folke/tokyonight.nvim") -- colorscheme
 	use("lewis6991/gitsigns.nvim") -- git signs
