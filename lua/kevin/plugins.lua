@@ -9,49 +9,32 @@ end
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
-	-- colorscheme
-	use("pineapplegiant/spaceduck")
-	use("Shatur/neovim-ayu")
+	use("folke/tokyonight.nvim") -- colorscheme
+	use("lewis6991/gitsigns.nvim") -- git signs
+	use("christoomey/vim-tmux-navigator") -- split manager
+	use("tpope/vim-vinegar") -- netrw extension
+	use({ "kylechui/nvim-surround", tag = "*" }) -- text manipulation
 
-	-- git
-	use("lewis6991/gitsigns.nvim")
-
-	-- undo tree
-	use("mbbill/undotree")
-
-	-- split manager
-	use("christoomey/vim-tmux-navigator")
-
-	-- netrw extension
-	use("tpope/vim-vinegar")
-
-	-- text manipulation
-	use("tpope/vim-surround")
-
-	-- fuzzy finder
 	use({
-		"nvim-telescope/telescope.nvim",
+		"nvim-telescope/telescope.nvim", -- fuzzy finder
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- syntax highlighting
 	use({
-		"nvim-treesitter/nvim-treesitter",
+		"nvim-treesitter/nvim-treesitter", -- syntax highlighting
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
 
-	-- lsp
 	use({
-		"VonHeikemen/lsp-zero.nvim",
+		"VonHeikemen/lsp-zero.nvim", -- lsp
 		requires = {
 			-- lsp support
 			{ "neovim/nvim-lspconfig" },
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
-
 			-- autocompletion
 			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-buffer" },
@@ -59,11 +42,9 @@ require("packer").startup(function(use)
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
-
 			-- snippets
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
-
 			-- formatting
 			{ "jose-elias-alvarez/null-ls.nvim" },
 		},
@@ -96,10 +77,13 @@ vim.g.netrw_banner = 1
 vim.keymap.set("n", "<Leader>e", vim.cmd.Ex)
 
 -- colorscheme
-vim.cmd([[colorscheme ayu]])
+vim.cmd([[colorscheme tokyonight-night]])
 
 -- gitsigns
 require("gitsigns").setup()
+
+-- surround
+require("nvim-surround").setup()
 
 -- telescope
 require("telescope").setup({
@@ -115,9 +99,6 @@ require("telescope").setup({
 vim.keymap.set("n", "<Leader>f", "<Cmd>Telescope find_files<CR>")
 vim.keymap.set("n", "<Leader>F", "<Cmd>Telescope live_grep<CR>")
 
--- undotree
-vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle)
-
 -- treesitter
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
@@ -126,7 +107,6 @@ require("nvim-treesitter.configs").setup({
 		"python",
 		"javascript",
 		"lua",
-		"ocaml",
 		"tsx",
 		"typescript",
 	},
