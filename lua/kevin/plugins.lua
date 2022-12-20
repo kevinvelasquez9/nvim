@@ -20,6 +20,7 @@ require("lazy").setup({
 	"tpope/vim-vinegar", -- netrw extension
 	"kylechui/nvim-surround", -- surround text objects
 	"numToStr/Comment.nvim", -- "gc" to comment visual regions/lines
+	"windwp/nvim-autopairs", -- auto pairs
 
 	{
 		"nvim-telescope/telescope.nvim", -- fuzzy finder
@@ -67,6 +68,7 @@ vim.cmd([[colorscheme tokyonight-night]])
 require("gitsigns").setup()
 require("nvim-surround").setup()
 require("Comment").setup()
+require("nvim-autopairs").setup()
 
 require("telescope").setup({
 	defaults = {
