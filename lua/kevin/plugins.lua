@@ -19,8 +19,14 @@ require("packer").startup(function(use)
 	-- undo tree
 	use("mbbill/undotree")
 
-	-- window manager
+	-- split manager
 	use("christoomey/vim-tmux-navigator")
+
+	-- netrw extension
+	use("tpope/vim-vinegar")
+
+	-- text manipulation
+	use("tpope/vim-surround")
 
 	-- fuzzy finder
 	use({
@@ -86,8 +92,7 @@ vim.cmd([[
 ]])
 
 -- netrw
-vim.g.netrw_list_hide = "^./$,.git"
-vim.netrw_hide = 1
+vim.g.netrw_banner = 1
 vim.keymap.set("n", "<Leader>e", vim.cmd.Ex)
 
 -- colorscheme
