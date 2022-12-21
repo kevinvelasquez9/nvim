@@ -54,7 +54,9 @@ null_ls.setup({
 			args = { "--enable-outside-detected-project", "--name", "$FILENAME", "-" },
 		}),
 		formatting.prettier,
+		formatting.rustfmt,
 		formatting.stylua,
+		formatting.taplo,
 	},
 	-- format on save
 	on_attach = function(current_client, bufnr)

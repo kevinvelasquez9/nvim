@@ -14,7 +14,7 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup({
 	"wbthomason/packer.nvim",
 
-	"folke/tokyonight.nvim", -- colorscheme
+	"bluz71/vim-nightfly-colors", -- colorscheme
 	"lewis6991/gitsigns.nvim", -- git signs
 	"christoomey/vim-tmux-navigator", -- split manager
 	"tpope/vim-vinegar", -- netrw extension
@@ -63,7 +63,7 @@ require("lazy").setup({
 vim.g.netrw_banner = 1
 vim.keymap.set("n", "<Leader>e", vim.cmd.Ex)
 
-vim.cmd([[colorscheme tokyonight-night]])
+vim.cmd([[colorscheme nightfly]])
 
 require("gitsigns").setup()
 require("nvim-surround").setup()
