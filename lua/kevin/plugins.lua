@@ -21,6 +21,7 @@ require("lazy").setup({
 	"kylechui/nvim-surround", -- surround text objects
 	"numToStr/Comment.nvim", -- "gc" to comment visual regions/lines
 	"windwp/nvim-autopairs", -- auto pairs
+	"windwp/nvim-ts-autotag", -- auto tags
 
 	{
 		"nvim-telescope/telescope.nvim", -- fuzzy finder
@@ -69,6 +70,7 @@ require("gitsigns").setup()
 require("nvim-surround").setup()
 require("Comment").setup()
 require("nvim-autopairs").setup()
+require("nvim-ts-autotag").setup()
 
 require("telescope").setup({
 	defaults = {
