@@ -22,6 +22,8 @@ require("lazy").setup({
 	"numToStr/Comment.nvim", -- "gc" to comment visual regions/lines
 	"windwp/nvim-autopairs", -- auto pairs
 	"windwp/nvim-ts-autotag", -- auto tags
+	"lukas-reineke/indent-blankline.nvim", -- show indentation levels
+	"folke/zen-mode.nvim", -- distraction free coding
 
 	{
 		"nvim-telescope/telescope.nvim", -- fuzzy finder
@@ -71,6 +73,15 @@ require("nvim-surround").setup()
 require("Comment").setup()
 require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
+require("indent_blankline").setup()
+
+require("zen-mode").setup({
+	plugins = {
+		gitsigns = { enabled = true },
+		tmux = { enabled = true },
+		kitty = { enabled = true },
+	},
+})
 
 require("telescope").setup({
 	defaults = {
