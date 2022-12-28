@@ -25,9 +25,6 @@ o.hlsearch = false
 -- appearance
 o.termguicolors = true
 o.signcolumn = "yes"
-
--- cursor line
-o.cursorline = true
 o.colorcolumn = "80"
 
 -- clipboard

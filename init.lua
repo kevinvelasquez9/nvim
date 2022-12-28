@@ -1,4 +1,4 @@
+require("kevin.lazy_bootstrap")
 require("kevin.keymaps")
 require("kevin.options")
-require("kevin.plugins")
-require("kevin.lsp")
+require("lazy").setup("plugins")
