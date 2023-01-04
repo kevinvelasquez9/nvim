@@ -1,4 +1,8 @@
 local o = vim.opt
+vim.g.mapleader = " "
+
+-- exist insert mode
+vim.keymap.set("i", "jk", "<Esc>")
 
 -- use block cursor
 o.guicursor = ""

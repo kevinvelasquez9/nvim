@@ -23,37 +23,15 @@ function M.config()
 	local cmp = require("cmp")
 
 	lsp.preset("recommended")
-
+	lsp.set_preferences({
+		sign_icons = {
+			error = "■",
+			warn = "■",
+			hint = "■",
+			info = "■",
+		},
+	})
 	lsp.ensure_installed({ "sumneko_lua" })
-
-	local cmp_kinds = {
-		-- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
-		Text = " ",
-		Method = " ",
-		Function = " ",
-		Constructor = " ",
-		Field = " ",
-		Variable = " ",
-		Class = " ",
-		Interface = " ",
-		Module = " ",
-		Property = " ",
-		Unit = " ",
-		Value = " ",
-		Enum = " ",
-		Keyword = " ",
-		Snippet = " ",
-		Color = " ",
-		File = " ",
-		Reference = " ",
-		Folder = " ",
-		EnumMember = " ",
-		Constant = " ",
-		Struct = " ",
-		Event = " ",
-		Operator = " ",
-		TypeParameter = " ",
-	}
 
 	local cmp_mappings = lsp.defaults.cmp_mappings({
 		["<C-Space>"] = cmp.mapping.confirm({ select = true }),
@@ -63,9 +41,9 @@ function M.config()
 	lsp.setup_nvim_cmp({
 		mapping = cmp_mappings,
 		formatting = {
-			format = function(_, vim_item)
-				vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. " " .. vim_item.kind
-				return vim_item
+			format = function(_, item)
+				item.menu = " "
+				return item
 			end,
 		},
 	})
