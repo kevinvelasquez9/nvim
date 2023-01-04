@@ -1,5 +1,6 @@
 local M = {
 	"tpope/vim-vinegar",
+	cmd = { "Ex" },
 	keys = {
 		{ "<Leader>e", "<Cmd>Ex<CR>" },
 	},

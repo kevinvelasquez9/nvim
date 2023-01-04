@@ -3,6 +3,9 @@ local M = {
 	build = function()
 		require("nvim-treesitter.install").update({ with_sync = true })
 	end,
+	dependencies = {
+		"windwp/nvim-ts-autotag",
+	},
 }
 
 function M.config()
@@ -18,6 +21,9 @@ function M.config()
 		},
 		auto_install = true,
 		highlight = {
+			enable = true,
+		},
+		autotag = {
 			enable = true,
 		},
 	})

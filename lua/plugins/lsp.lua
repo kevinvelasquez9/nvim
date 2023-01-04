@@ -1,5 +1,5 @@
 local M = {
-	"VonHeikemen/lsp-zero.nvim", -- lsp
+	"VonHeikemen/lsp-zero.nvim",
 	dependencies = {
 		-- lsp support
 		"neovim/nvim-lspconfig",
