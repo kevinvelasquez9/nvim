@@ -11,7 +11,7 @@ function M.config()
 			},
 		},
 	})
-	vim.keymap.set("n", "<Leader>zz", "<Cmd>ZenMode<CR>")
+	vim.keymap.set("n", "<Leader>zz", "<Cmd>ZenMode<CR>", { desc = "Toggle zen mode" })
 end
 
 return M
