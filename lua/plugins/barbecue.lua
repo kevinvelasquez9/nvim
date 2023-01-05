@@ -6,6 +6,7 @@ local M = {
 		"smiteshp/nvim-navic",
 	},
 	config = true,
+	enabled = false,
 }
 
 return M

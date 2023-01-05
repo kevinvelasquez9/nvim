@@ -29,9 +29,8 @@ o.hlsearch = false
 -- appearance
 o.termguicolors = true
 o.signcolumn = "yes"
-o.colorcolumn = "80"
 
--- clipboard
+-- use system clipboard
 o.clipboard:append("unnamedplus")
 
 -- split windows
