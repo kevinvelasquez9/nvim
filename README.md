@@ -4,9 +4,9 @@
 ├── lazy-lock.json
 └── lua
     ├── kevin
-    │   ├── lazy.lua
-    │   └── settings.lua
-    └── plugins
+    │   ├── lazy.lua # bootstrap the plugin manager
+    │   └── settings.lua # basic configuration
+    └── plugins # each file loads a separate plugin
         ├── autopairs.lua
         ├── barbecue.lua
         ├── blankline.lua
