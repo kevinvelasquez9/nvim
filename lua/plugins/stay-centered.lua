@@ -1,3 +1,4 @@
+-- Automtically center the current line vertically
 local M = {
 	"arnamak/stay-centered.nvim",
 }

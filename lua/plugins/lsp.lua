@@ -1,3 +1,4 @@
+-- Provide full diagnostics and autocompletion
 local M = {
 	"VonHeikemen/lsp-zero.nvim",
 	dependencies = {

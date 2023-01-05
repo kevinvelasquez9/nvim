@@ -1,3 +1,4 @@
+-- VS Code like winbar
 local M = {
 	"utilyre/barbecue.nvim",
 	dependencies = {

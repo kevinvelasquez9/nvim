@@ -1,3 +1,4 @@
+-- `<Leader>zz` to remove distractions and center your editor
 local M = {
 	"folke/zen-mode.nvim",
 }

@@ -1,3 +1,6 @@
+-- `<Leader>ff` to search for files
+-- `<Leader>ft` to search for text
+-- `<Leader>fk` to search for configured keymaps
 local M = {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.0",
@@ -16,7 +19,7 @@ function M.config()
 		},
 	})
 	vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Find files" })
-	vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { desc = "Find grep" })
+	vim.keymap.set("n", "<Leader>ft", "<Cmd>Telescope live_grep<CR>", { desc = "Find text" })
 	vim.keymap.set("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>", { desc = "Find keymaps" })
 end
 

@@ -1,3 +1,4 @@
+-- Git decorations and preview hunks
 local M = {
 	"lewis6991/gitsigns.nvim",
 }

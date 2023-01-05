@@ -1,3 +1,4 @@
+-- Better syntax highlighting and more text objects
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	build = function()

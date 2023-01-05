@@ -1,3 +1,4 @@
+-- `<Leader>e` to toggle the file explorer tree
 local M = {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = {

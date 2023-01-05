@@ -1,3 +1,4 @@
+-- Use your favorite colorscheme
 local M = {
 	"bluz71/vim-nightfly-colors",
 }
