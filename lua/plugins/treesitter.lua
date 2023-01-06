@@ -5,7 +5,7 @@ local M = {
 		require("nvim-treesitter.install").update({ with_sync = true })
 	end,
 	dependencies = {
-		"windwp/nvim-ts-autotag",
+		"windwp/nvim-ts-autotag", -- automatically close opening tags
 	},
 }
 

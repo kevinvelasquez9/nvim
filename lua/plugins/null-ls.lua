@@ -12,6 +12,7 @@ function M.config()
 		sources = {
 			formatting.black,
 			formatting.google_java_format,
+			formatting.gofmt,
 			formatting.ocamlformat.with({
 				args = { "--enable-outside-detected-project", "--name", "$FILENAME", "-" },
 			}),

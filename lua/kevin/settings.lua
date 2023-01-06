@@ -29,6 +29,7 @@ o.hlsearch = false
 -- appearance
 o.termguicolors = true
 o.signcolumn = "yes"
+o.laststatus = 3
 
 -- use system clipboard
 o.clipboard:append("unnamedplus")
