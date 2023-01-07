@@ -4,6 +4,10 @@ vim.g.mapleader = " "
 -- exist insert mode
 vim.keymap.set("i", "jk", "<Esc>")
 
+-- treat visual lines as normal lines
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 -- use block cursor
 o.guicursor = ""
 
@@ -19,7 +23,7 @@ o.expandtab = true
 o.smartindent = true
 
 -- line wrapping
-o.wrap = false
+o.wrap = true
 
 -- search
 o.ignorecase = true
@@ -29,6 +33,7 @@ o.hlsearch = false
 -- appearance
 o.termguicolors = true
 o.signcolumn = "yes"
+o.cursorline = true
 o.laststatus = 3
 
 -- use system clipboard
