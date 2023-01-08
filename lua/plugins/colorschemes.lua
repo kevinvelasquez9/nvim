@@ -1,4 +1,4 @@
--- enable your favorite color scheme
+-- Enable your favorite color scheme
 local M = {
 	{
 		"catppuccin/nvim",

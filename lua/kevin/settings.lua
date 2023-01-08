@@ -1,49 +1,49 @@
 local o = vim.opt
 vim.g.mapleader = " "
 
--- exist insert mode
+-- Faster way to exit insert mode
 vim.keymap.set("i", "jk", "<Esc>")
 
--- treat visual lines as normal lines
+-- Treat visual lines as normal lines
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
 
--- use block cursor
+-- Use block cursor
 o.guicursor = ""
 
--- line numbers
+-- Line numbers
 o.number = true
 o.relativenumber = true
 
--- tabs & indentation
+-- Tabs & indentation
 o.tabstop = 2
 o.softtabstop = 2
 o.shiftwidth = 2
 o.expandtab = true
 o.smartindent = true
 
--- line wrapping
+-- Line wrapping
 o.wrap = true
 
--- search
+-- Search
 o.ignorecase = true
 o.smartcase = true
 o.hlsearch = false
 
--- appearance
+-- Appearance
 o.termguicolors = true
 o.signcolumn = "yes"
 o.cursorline = true
 o.laststatus = 3
 
--- use system clipboard
+-- Use system clipboard
 o.clipboard:append("unnamedplus")
 
--- split windows
+-- Split windows
 o.splitright = true
 o.splitbelow = true
 
--- backup
+-- Backup
 o.swapfile = false
 o.backup = false
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"

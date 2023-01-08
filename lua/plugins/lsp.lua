@@ -2,18 +2,18 @@
 local M = {
 	"VonHeikemen/lsp-zero.nvim",
 	dependencies = {
-		-- lsp support
+		-- LSP support
 		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		-- autocompletion
+		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
-		-- snippets
+		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
 	},

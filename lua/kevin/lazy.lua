@@ -1,4 +1,4 @@
--- bootstrap lazy
+-- Bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
--- load lua/kevin/plugins/*
+-- Load lua/kevin/plugins/*
 require("lazy").setup("plugins", {
 	performance = {
 		rtp = {

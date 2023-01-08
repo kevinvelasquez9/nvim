@@ -21,7 +21,7 @@ function M.config()
 			formatting.rustfmt,
 			formatting.stylua,
 		},
-		-- format on save
+		-- Format on save
 		on_attach = function(current_client, bufnr)
 			if current_client.supports_method("textDocument/formatting") then
 				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -31,7 +31,7 @@ function M.config()
 					callback = function()
 						vim.lsp.buf.format({
 							filter = function(client)
-								--  only use null-ls for formatting instead of lsp server
+								-- Only use null-ls for formatting instead of lsp server
 								return client.name == "null-ls"
 							end,
 							bufnr = bufnr,
