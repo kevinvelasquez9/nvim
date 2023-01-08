@@ -1,9 +1,8 @@
 local M = {
 	"folke/trouble.nvim",
+	keys = {
+		{ "<Leader>xx", "<Cmd>TroubleToggle<CR>", desc = "Toggle trouble list" },
+	},
 }
-
-function M.config()
-	vim.keymap.set("n", "<Leader>xx", "<Cmd>TroubleToggle<CR>")
-end
 
 return M

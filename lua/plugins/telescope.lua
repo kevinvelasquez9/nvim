@@ -5,6 +5,11 @@ local M = {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.0",
 	dependencies = { "nvim-lua/plenary.nvim" },
+	keys = {
+		{ "<Leader>ff", "<Cmd>Telescope find_files<CR>", desc = "Find files" },
+		{ "<Leader>ft", "<Cmd>Telescope live_grep<CR>", desc = "Find text" },
+		{ "<Leader>fk", "<Cmd>Telescope keymaps<CR>", desc = "Find keymaps" },
+	},
 }
 
 function M.config()
@@ -18,9 +23,6 @@ function M.config()
 			},
 		},
 	})
-	vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope find_files<CR>", { desc = "Find files" })
-	vim.keymap.set("n", "<Leader>ft", "<Cmd>Telescope live_grep<CR>", { desc = "Find text" })
-	vim.keymap.set("n", "<Leader>fk", "<Cmd>Telescope keymaps<CR>", { desc = "Find keymaps" })
 end
 
 return M

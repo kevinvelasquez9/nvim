@@ -6,7 +6,6 @@ local M = {
 	end,
 	dependencies = {
 		"windwp/nvim-ts-autotag", -- automatically close opening tags
-		"p00f/nvim-ts-rainbow", -- rainbow parentheses
 	},
 }
 
@@ -27,10 +26,6 @@ function M.config()
 		},
 		autotag = {
 			enable = true,
-		},
-		rainbow = {
-			enable = true,
-			extended_mode = true,
 		},
 	})
 end

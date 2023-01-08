@@ -1,11 +1,11 @@
 -- Git decorations and preview hunks
 local M = {
 	"lewis6991/gitsigns.nvim",
+	config = true,
+	event = "BufReadPost",
+	keys = {
+		{ "<Leader>gp", "<Cmd>Gitsigns preview_hunk<CR>", desc = "Preview hunk" },
+	},
 }
-
-function M.config()
-	require("gitsigns").setup()
-	vim.keymap.set("n", "<Leader>gp", "<Cmd>Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
-end
 
 return M

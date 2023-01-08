@@ -1,6 +1,7 @@
 -- Provide autoformatting for configured language servers
 local M = {
 	"jose-elias-alvarez/null-ls.nvim",
+	event = "BufReadPost",
 }
 
 function M.config()

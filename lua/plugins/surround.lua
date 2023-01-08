@@ -4,6 +4,12 @@
 local M = {
 	"kylechui/nvim-surround",
 	config = true,
+	keys = {
+		{ "ys", mode = "n" },
+		{ "ds", mode = "n" },
+		{ "cs", mode = "n" },
+		{ "S", mode = "x" },
+	},
 }
 
 return M
