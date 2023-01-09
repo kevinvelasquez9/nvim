@@ -35,16 +35,47 @@ function M.config()
 	})
 	lsp.ensure_installed({ "sumneko_lua" })
 
+	local cmp_kinds = {
+		-- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
+		Text = " ",
+		Method = " ",
+		Function = " ",
+		Constructor = " ",
+		Field = " ",
+		Variable = " ",
+		Class = " ",
+		Interface = " ",
+		Module = " ",
+		Property = " ",
+		Unit = " ",
+		Value = " ",
+		Enum = " ",
+		Keyword = " ",
+		Snippet = " ",
+		Color = " ",
+		File = " ",
+		Reference = " ",
+		Folder = " ",
+		EnumMember = " ",
+		Constant = " ",
+		Struct = " ",
+		Event = " ",
+		Operator = " ",
+		TypeParameter = " ",
+	}
+
 	local cmp_mappings = lsp.defaults.cmp_mappings({
-		["<C-Space>"] = cmp.mapping.confirm({ select = true }),
+		["<Tab>"] = cmp.mapping.confirm({ select = true }),
 	})
+	cmp_mappings["<S-Tab>"] = nil
 	cmp_mappings["<CR>"] = nil
 
 	lsp.setup_nvim_cmp({
 		mapping = cmp_mappings,
 		formatting = {
+			fields = { "kind", "abbr" },
 			format = function(_, item)
-				item.menu = " "
+				item.kind = cmp_kinds[item.kind]
 				return item
 			end,
 		},
