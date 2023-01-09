@@ -7,6 +7,7 @@ local M = {
 	dependencies = {
 		"windwp/nvim-ts-autotag", -- automatically close opening tags
 	},
+	event = "BufReadPre",
 }
 
 function M.config()
