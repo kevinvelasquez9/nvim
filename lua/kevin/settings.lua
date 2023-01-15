@@ -35,6 +35,7 @@ o.termguicolors = true
 o.signcolumn = "yes"
 o.cursorline = true
 o.laststatus = 3
+o.showmode = false
 
 -- Use system clipboard
 o.clipboard:append("unnamedplus")

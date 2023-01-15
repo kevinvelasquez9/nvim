@@ -17,7 +17,9 @@ function M.config()
 			formatting.ocamlformat.with({
 				args = { "--enable-outside-detected-project", "--name", "$FILENAME", "-" },
 			}),
-			formatting.prettier,
+			formatting.prettier.with({
+				extra_filetypes = { "svelte" },
+			}),
 			formatting.rustfmt,
 			formatting.stylua,
 		},

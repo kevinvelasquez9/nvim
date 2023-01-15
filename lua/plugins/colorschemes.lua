@@ -16,7 +16,7 @@ local M = {
 	},
 	{
 		"bluz71/vim-nightfly-colors",
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.cmd([[colorscheme nightfly]])
 		end,
@@ -33,6 +33,13 @@ local M = {
 		enabled = false,
 		config = function()
 			vim.cmd([[colorscheme gruvbox]])
+		end,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		enabled = true,
+		config = function()
+			vim.cmd([[colorscheme kanagawa]])
 		end,
 	},
 }

@@ -16,16 +16,21 @@ local M = {
 		-- Snippets
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
+		-- Better Neovim documentation
+		"folke/neodev.nvim",
 	},
 	event = "BufReadPre",
 }
 
 function M.config()
+	require("neodev").setup()
+
 	local lsp = require("lsp-zero")
 	local cmp = require("cmp")
 
 	lsp.preset("recommended")
 	lsp.set_preferences({
+		set_lsp_keymaps = false,
 		sign_icons = {
 			error = "■",
 			warn = "■",
@@ -81,23 +86,21 @@ function M.config()
 		},
 	})
 
-	lsp.configure("sumneko_lua", {
-		settings = {
-			Lua = {
-				diagnostics = {
-					globals = { "vim" },
-				},
-				workspace = {
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.stdpath("config") .. "/lua"] = true,
-					},
-				},
-			},
-		},
-	})
+	lsp.on_attach(function(_, _)
+		vim.keymap.set("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Show documentation" })
+		vim.keymap.set("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+		vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
+		vim.keymap.set("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references" })
+		vim.keymap.set("n", "gl", "<Cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Go to line diagnostics" })
+		vim.keymap.set("n", "<Leader>r", "<Cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
+		vim.keymap.set("n", "<Leader>a", "<Cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Apply code action" })
+	end)
 
 	lsp.setup()
+
+	vim.diagnostic.config({
+		virtual_text = true,
+	})
 end
 
 return M
