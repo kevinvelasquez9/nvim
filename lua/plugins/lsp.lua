@@ -18,6 +18,8 @@ local M = {
 		"rafamadriz/friendly-snippets",
 		-- Better Neovim documentation
 		"folke/neodev.nvim",
+		-- Icons
+		"onsails/lspkind.nvim",
 	},
 	event = "BufReadPre",
 }
@@ -25,65 +27,22 @@ local M = {
 function M.config()
 	require("neodev").setup()
 
+	local icons = require("kevin.icons")
 	local lsp = require("lsp-zero")
-	local cmp = require("cmp")
 
-	lsp.preset("recommended")
+	lsp.preset("lsp-compe")
 	lsp.set_preferences({
 		set_lsp_keymaps = false,
 		sign_icons = {
-			error = "■",
-			warn = "■",
-			hint = "■",
-			info = "■",
+			error = icons.Error,
+			warn = icons.Warn,
+			hint = icons.Hint,
+			info = icons.Info,
 		},
 	})
-	lsp.ensure_installed({ "sumneko_lua" })
 
-	local cmp_kinds = {
-		-- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
-		Text = " ",
-		Method = " ",
-		Function = " ",
-		Constructor = " ",
-		Field = " ",
-		Variable = " ",
-		Class = " ",
-		Interface = " ",
-		Module = " ",
-		Property = " ",
-		Unit = " ",
-		Value = " ",
-		Enum = " ",
-		Keyword = " ",
-		Snippet = " ",
-		Color = " ",
-		File = " ",
-		Reference = " ",
-		Folder = " ",
-		EnumMember = " ",
-		Constant = " ",
-		Struct = " ",
-		Event = " ",
-		Operator = " ",
-		TypeParameter = " ",
-	}
-
-	local cmp_mappings = lsp.defaults.cmp_mappings({
-		["<Tab>"] = cmp.mapping.confirm({ select = true }),
-	})
-	cmp_mappings["<S-Tab>"] = nil
-	cmp_mappings["<CR>"] = nil
-
-	lsp.setup_nvim_cmp({
-		mapping = cmp_mappings,
-		formatting = {
-			fields = { "kind", "abbr" },
-			format = function(_, item)
-				item.kind = cmp_kinds[item.kind]
-				return item
-			end,
-		},
+	lsp.configure("emmet_ls", {
+		filetypes = { "html", "typescriptreact", "javascriptreact" },
 	})
 
 	lsp.on_attach(function(_, _)
@@ -92,15 +51,32 @@ function M.config()
 		vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
 		vim.keymap.set("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references" })
 		vim.keymap.set("n", "gl", "<Cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Go to line diagnostics" })
-		vim.keymap.set("n", "<Leader>r", "<Cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
-		vim.keymap.set("n", "<Leader>a", "<Cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Apply code action" })
+		vim.keymap.set("n", "<Leader>cr", "<Cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename symbol" })
+		vim.keymap.set("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Apply code action" })
 	end)
 
 	lsp.setup()
 
-	vim.diagnostic.config({
-		virtual_text = true,
-	})
+	vim.diagnostic.config({ virtual_text = true })
+
+	local cmp = require("cmp")
+
+	cmp.setup(lsp.defaults.cmp_config({
+		mapping = {
+			["<Tab>"] = cmp.mapping.confirm({ select = true }),
+			["<C-k>"] = cmp.mapping.select_prev_item(),
+			["<C-j>"] = cmp.mapping.select_next_item(),
+			["<S-Tab>"] = vim.NIL,
+			["<CR>"] = vim.NIL,
+		},
+		formatting = {
+			fields = { "abbr", "kind", "menu" },
+			format = require("lspkind").cmp_format({}),
+		},
+		window = {
+			completion = cmp.config.window.bordered(),
+		},
+	}))
 end
 
 return M

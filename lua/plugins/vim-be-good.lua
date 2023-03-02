@@ -1,7 +1,5 @@
 -- `:VimBeGood` to practice Vim motions
-local M = {
+return {
 	"ThePrimeagen/vim-be-good",
 	cmd = "VimBeGood",
 }
-
-return M

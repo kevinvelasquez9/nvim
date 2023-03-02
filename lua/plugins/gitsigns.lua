@@ -1,11 +1,6 @@
 -- Git decorations and preview hunks
-local M = {
+return {
 	"lewis6991/gitsigns.nvim",
+	event = "BufReadPre",
 	config = true,
-	event = "BufReadPost",
-	keys = {
-		{ "<Leader>gp", "<Cmd>Gitsigns preview_hunk<CR>", desc = "Preview hunk" },
-	},
 }
-
-return M

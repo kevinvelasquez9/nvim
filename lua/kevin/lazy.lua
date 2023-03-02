@@ -32,5 +32,3 @@ require("lazy").setup("plugins", {
 		notify = false,
 	},
 })
-
-vim.keymap.set("n", "<Leader>l", "<Cmd>Lazy<CR>", { desc = "Open Lazy" })

@@ -1,11 +1,8 @@
 -- Automtically center the current line vertically
-local M = {
+return {
 	"arnamak/stay-centered.nvim",
 	event = "BufReadPre",
+	config = function()
+		require("stay-centered")
+	end,
 }
-
-function M.config()
-	require("stay-centered")
-end
-
-return M

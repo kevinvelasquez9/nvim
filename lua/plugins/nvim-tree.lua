@@ -12,8 +12,12 @@ local M = {
 function M.config()
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
+
+	local icons = require("kevin.icons")
+
 	require("nvim-tree").setup({
 		renderer = {
+			highlight_git = true,
 			indent_markers = {
 				enable = true,
 			},
@@ -24,9 +28,19 @@ function M.config()
 				},
 			},
 		},
-		filters = {
-			custom = { "^.git$", "^node_modules$" },
+		diagnostics = {
+			enable = true,
+			show_on_dirs = true,
+			icons = {
+				hint = icons.Hint,
+				info = icons.Info,
+				warning = icons.Warn,
+				error = icons.Error,
+			},
 		},
+		-- filters = {
+		-- 	custom = { "^.git$", "^node_modules$" },
+		-- },
 	})
 end
 

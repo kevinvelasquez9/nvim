@@ -1,6 +1,6 @@
 -- `gcc` to create linewise comment
 -- `gbc` to create blockwise comment
-local M = {
+return {
 	"numToStr/Comment.nvim",
 	config = true,
 	keys = {
@@ -10,5 +10,3 @@ local M = {
 		{ "gb", mode = "x" },
 	},
 }
-
-return M

@@ -1,5 +1,5 @@
 -- `<C-[h,j,k,l]>` to navigate between splits and windows
-local M = {
+return {
 	"christoomey/vim-tmux-navigator",
 	keys = {
 		{ "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", desc = "Navigate to left split" },
@@ -8,5 +8,3 @@ local M = {
 		{ "<C-l>", "<Cmd>TmuxNavigateRight<CR>", desc = "Navigate to right split" },
 	},
 }
-
-return M
