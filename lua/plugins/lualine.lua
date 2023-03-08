@@ -65,7 +65,8 @@ return {
 					{
 						"decorate",
 						fmt = function(_, _)
-							return "   "
+							-- return "   "
+							return "   "
 						end,
 					},
 				},

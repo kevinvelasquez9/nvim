@@ -32,3 +32,21 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.spell = true
 	end,
 })
+
+-- Change terminal background to match Neovim
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		print("hi")
+		local bg = vim.api.nvim_get_hl_by_name("Normal", true)["background"]
+		if not bg then
+			return
+		end
+		if os.getenv("TMUX") then
+			bg = string.format('printf "\\ePtmux;\\e\\033]11;#%06x\\007\\e\\\\"', bg)
+		else
+			bg = string.format('printf "\\033]11;#%06x\\007"', bg)
+		end
+		os.execute(bg)
+		return true
+	end,
+})
