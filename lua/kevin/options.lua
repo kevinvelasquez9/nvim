@@ -11,7 +11,6 @@ o.guicursor = "" -- Use block cursor
 o.ignorecase = true -- Ignore case
 o.laststatus = 3 -- Global status line
 o.number = true -- Show line numbers
--- o.numberwidth = 3 -- Minimal number of columns to use for line numbers
 o.relativenumber = true -- Show relative line numbers
 o.scrolloff = 4 -- Lines of context
 o.shiftwidth = 2 -- Size of an indent
@@ -22,7 +21,6 @@ o.smartindent = true -- Insert indents automatically
 o.softtabstop = 2 -- Backspace will delete a tab
 o.splitbelow = true -- Put new windows below current
 o.splitright = true -- Put new windows right of current
--- o.statuscolumn = "%=%{v:relnum?v:relnum:v:lnum}%=%s" -- Displaying status column
 o.swapfile = false -- Don't create swapfiles
 o.tabstop = 2 -- Number of spaces tabs count for
 o.termguicolors = true -- True color support
