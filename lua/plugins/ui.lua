@@ -4,7 +4,7 @@ return {
 	{ "stevearc/dressing.nvim", lazy = true },
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	{ "nvim-lua/plenary.nvim", lazy = true },
-	{ "brenoprata10/nvim-highlight-colors", config = true },
+	{ "brenoprata10/nvim-highlight-colors", event = { "BufReadPre", "BufNewFile" }, config = true },
 	{
 		"akinsho/bufferline.nvim",
 		event = "VeryLazy",
@@ -23,9 +23,9 @@ return {
 				offsets = {
 					{
 						filetype = "neo-tree",
-						text = "Neo-tree",
+						text = "File Explorer",
 						highlight = "Directory",
-						text_align = "left",
+						text_align = "center",
 					},
 				},
 			},

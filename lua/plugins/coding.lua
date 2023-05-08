@@ -1,6 +1,13 @@
 -- TODO echasnovski/mini.ai
 return {
 	{
+		"echasnovski/mini.bracketed",
+		event = "VeryLazy",
+		config = function(_, opts)
+			require("mini.bracketed").setup(opts)
+		end,
+	},
+	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
 		opts = {
